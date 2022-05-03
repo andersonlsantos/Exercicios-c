@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    double raio;
+    double n = 3.14159, area;
+
+    scanf("%f", &raio);
+
+    area = n * raio * 2;
+
+    printf("A=%0.4f", area);
+
+
+    return 0;
+}

@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    char letra;
+    int cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0;
+    float pagamento1 = 0, pagamento2 = 0, pagamento3 = 0, pagamento4 = 0;
+
+    while(letra != 'n'){
+
+        printf("-----CARDAPIO-----\n\n");
+
+        printf("Especificação          codigo     preço\n");
+        printf("Cachorro quente        100        R$10.00\n");
+        printf("Dog duplo              101        R$14.00\n");
+        printf("Dog duplo com queijo   102        R$17.00\n");
+        printf("X-tudo                 103        R$20.00\n\n");
+
+        int cardapio;
+        printf("Digite o codigo do produto desejado: ");
+        scanf("%i", &cardapio);
+        switch(cardapio){
+            case 100:
+            printf("-----Cachorro quente-----\n");
+            cont1 += 1;
+            pagamento1 = cont1 * 10.00;
+            break;
+            case 101:
+            printf("-----Dog duplo-----\n");
+            cont2 += 1;
+            pagamento2 = cont2 * 14.00;
+            break;
+            case 102:
+            printf("-----Dog duplo com queijo-----\n");
+            cont3 += 1;
+            pagamento3 = cont3 * 17.00;
+            break;
+            case 103:
+            printf("-----X-tudo-----\n");
+            cont4 += 1;
+            pagamento4 = cont4 * 20.00;
+            break;
+            default:
+                printf("Opção invalida!\n");
+        }
+
+        getchar();
+        printf("\nDeseja fazer outro pedido? (s/n)");
+        scanf("%c", &letra);
+        while(letra != 's' && letra != 'n'){
+            printf("\nA letra '%c' não é valida, digite 's' para sim ou 'n' para não!\n", letra);
+            getchar();
+            printf("\nDeseja fazer outro pedido? (s/n)");
+            scanf("%c", &letra);
+        }
+
+
+    }
+
+    printf("\nVoce pediu %i lanches\n", cont1 + cont2 + cont3 + cont4);
+    printf("Total a pagar R$%0.2f\n", pagamento1 + pagamento2 + pagamento3 + pagamento4);
+    printf("Muito obrigado! Volte sempre.");
+
+    /*char teste = 's';
+
+    while(teste == 's'){
+
+        printf("Digite: ");
+        scanf("%c", &teste);
+        getchar();
+    }*/
+
+    return 0;
+}

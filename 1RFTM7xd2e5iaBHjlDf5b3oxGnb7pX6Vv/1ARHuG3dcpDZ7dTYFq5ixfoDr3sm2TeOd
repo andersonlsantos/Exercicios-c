@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int numero, cont = 0, mais = 0;
+
+    do{
+        printf("teste: ");
+        scanf("%i", &numero);
+        getchar();
+        if(numero > 0){
+            printf("\n%i + %i = %i\n\n", numero, numero, numero + numero);
+            mais += numero;
+            printf("Total = %i\n\n", mais);
+        }
+    }while(numero >= 0);
+
+    return 0;
+}

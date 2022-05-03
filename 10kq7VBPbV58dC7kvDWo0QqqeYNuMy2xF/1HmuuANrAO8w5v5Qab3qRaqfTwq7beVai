@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char a, b, c, tentativa;
+    int i = 1, cont1 = 0, cont2 = 0, cont3 = 0;
+
+    printf("Primeiro jogador digite tres caracteres(a b c): ");
+    scanf("%c %c %c", &a, &b, &c);
+
+    printf("\n==-=-=-=--=-==-=-=---=-=-=-=-==-=-=--==-=--==--=-=-==-=---=-=-=-==--==--==--=-==--=-=-==--=\n");
+    printf("\nSegundo jogador tem que adivinhar qual os 3 caracteres que o primeiro jogador digitou.\nTem 15 tentativas boa sorte!!!\n");
+    printf("\n==-=-=-=--=-==-=-=---=-=-=-=-==-=-=--==-=--==--=-=-==-=---=-=-=-==--==--==--=-==--=-=-==--=\n");
+
+    while(i <= 15){
+        printf("%i - tentativa: ", i);
+        getchar();
+        scanf("%c", &tentativa);
+
+        if(tentativa == a){
+            cont1 += 1;
+            printf("\nVoce acertou o primeiro caracter = %c\n", a);
+        }else if(tentativa == b){
+            cont2 += 1;
+            printf("\nVoce acertou o segundo caracter = %c\n", b);
+        }else if(tentativa == c){
+            cont3 += 1;
+            printf("\nVoce acertou o terceiro caracter = %c\n", c);
+        }
+
+        if(cont1 == 1 && cont2 == 0 && cont3 == 0 || cont2 == 1 && cont1 == 0 && cont3 == 0 || cont3 == 1 && cont1 == 0 && cont2 == 0){
+            printf("\nfalta acertar 2 caracteres para ganhar o jogo\n");
+        }
+
+        if(cont1 == 1 && cont2 == 1 && cont3 == 0 || cont1 == 1 && cont3 == 1 && cont2 == 0 || cont2 == 1 && cont3 == 1 && cont1 == 0){
+            printf("\nfalta acertar 1 caracter para ganhar o jogo\n");
+        }
+
+        if(cont1 == 1 && cont2 == 1 && cont3 == 1){
+            printf("\nVoce acertou os 3 caracteres. Parabens voce ganhou o jogo!!!!\n");
+            break;
+        }
+
+        if(cont1 > 1){
+            cont1 = 1;
+        }
+
+        if(cont2 > 1){
+            cont2 = 1;
+        }
+
+        if(cont3 > 1){
+            cont3 = 1;
+        }
+
+        if(i == 15){
+            printf("\nGame Over.\n");
+        }
+
+        i++;
+    }
+
+    return 0;
+}

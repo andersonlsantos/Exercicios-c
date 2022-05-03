@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1633876703 source:/home/anderson-user/Documents/Documentos/curso-c/curso-c/Exercicio-30/main.c
+	<stdio.h>
+	<stdlib.h>
+

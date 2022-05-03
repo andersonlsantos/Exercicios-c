@@ -1,0 +1,218 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    /*
+        Crie um algoritmo que simule o funcionamento de um caixa de supermercado.
+        O caixa fica aberto até o fim do expediente e pode processar a compra de vários clientes.
+        Cada cliente pode comprar vários itens (1.Feijão - R$ 2.0, 2.Arroz - R$ 1.5, 3.Carne - R$ 10.0, 4.
+        Tomate - R$ 3.0, 5. Cebola - R$ 2.5). Ao ler cada item deve ser exibida uma mensagem para o
+        operador do caixa perguntando se há mais itens a serem processados. Ao final, exiba quanto a compra
+        custou ao cliente. E então solicite do operador do caixa a informação se deseja fechar o caixa.
+        Quando o caixa for fechado, imprima quanto de dinheiro aquele caixa apurou no dia.
+    */
+
+    char desejaFecharOCaixa = 'n';
+    float contador, contador2 = 0, cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0, cont5 = 0, totalDosTotal;
+
+    while(desejaFecharOCaixa == 'n'){
+
+        int opcaoCliente;
+        char desejaContinuar;
+        float feijao = 2, arroz = 1.5, carne = 10, tomate = 3, cebola = 2.5;
+        float contFeijao = 0, contArroz = 0, contCarne = 0, contTomate = 0, contCebola = 0;
+        float cont2Feijao = 0, cont2Arroz = 0, cont2Carne = 0, cont2Tomate = 0, cont2Cebola = 0;
+        float resutadoFinal;
+
+        printf("\n1-Feijão - R$2,00\n2-Arroz  - R$1,50\n3-Carne  - R$10,00\n4-Tomate - R$3,00\n5-Cebola - R$2.50\n");
+
+
+        //Inicio primeira parte ------------------
+        printf("Digite o numero da sua opção: ");
+        scanf("%i", &opcaoCliente);
+        //tratamento de erro caso o usuario digite um numero que não tem opção
+        while(opcaoCliente > 5 || opcaoCliente == 0){
+            getchar();
+            printf("Opção invalida!!! Digite o numero da sua opção: ");
+            scanf("%i", &opcaoCliente);
+            //getchar();
+        }
+        //fim do tratamento de erro
+
+        //somando os itens comprados
+        switch(opcaoCliente){
+            case 1:
+                contFeijao++;
+                break;
+            case 2:
+                contArroz++;
+                break;
+            case 3:
+                contCarne++;
+                break;
+            case 4:
+                contTomate++;
+                break;
+            case 5:
+                contCebola++;
+                break;
+        }
+        //fim
+
+        //vamos perguntar ao cliente se deseja comprar algo mais
+        getchar();
+        printf("Deseja comprar mais alguma coisa (s/n): ");
+        scanf("%c", &desejaContinuar);
+        //fim
+        //tratamento de erro caso o usuario digite uma opção diferente de 's' ou 'n'
+        while(desejaContinuar != 's' && desejaContinuar != 'n'){
+            getchar();
+            printf("Opção invalida!!! Deseja comprar mais alguma coisa (s/n): ");
+            scanf("%c", &desejaContinuar);
+            //getchar();
+        }
+        //fim tratamento de erro
+
+        //tratamento caso o usuario deseje comprar apenas um item
+        if(desejaContinuar == 'n'){
+            switch(opcaoCliente){
+                case 1:
+                    printf("\nUm item Feijão = R$2,00\n");
+                    cont1 = 2;
+                    break;
+                case 2:
+                    printf("\nUm item Arroz = R$1,50\n");
+                    cont2 = 1.5;
+                    break;
+                case 3:
+                    printf("\nUm item Carne = R$10,00\n");
+                    cont3 = 10;
+                    break;
+                case 4:
+                    printf("\nUm item Tomate = R$3,00\n");
+                    cont4 = 3;
+                    break;
+                case 5:
+                    printf("\nUm item Cebola = R$2,50\n");
+                    cont5 = 2.5;
+                    break;
+            }
+            getchar();
+        }
+        contador = cont1 + cont2 + cont3 + cont4 + cont5;
+        //fim
+
+        //tratamento caso o usuario deseje comprar mais de um item
+        if(desejaContinuar == 's'){
+            while(desejaContinuar == 's'){
+                printf("Digite o numero da sua opção: ");
+                scanf("%i", &opcaoCliente);
+                //tratamento de erro caso o usuario digite um numero que não tem opção
+                while(opcaoCliente > 5 || opcaoCliente == 0){
+                    getchar();
+                    printf("Opção invalida!!! Digite o numero da sua opção: ");
+                    scanf("%i", &opcaoCliente);
+                    //getchar();
+                }
+                //fim do tratamento de erro
+                //getchar();
+
+                //somando os itens comprados
+                switch(opcaoCliente){
+                    case 1:
+                        contFeijao++;
+                        break;
+                    case 2:
+                        contArroz++;
+                        break;
+                    case 3:
+                        contCarne++;
+                        break;
+                    case 4:
+                        contTomate++;
+                        break;
+                    case 5:
+                        contCebola++;
+                        break;
+                }
+                //fim
+
+                //vamos perguntar ao cliente se deseja comprar algo mais
+                getchar();
+                printf("Deseja comprar mais alguma coisa (s/n): ");
+                scanf("%c", &desejaContinuar);
+                getchar();
+                //fim
+                if(desejaContinuar == 'n'){
+                    break;
+                }
+                //tratamento de erro
+                while(desejaContinuar != 's'){
+                    printf("Opção invalida!!! Deseja comprar mais alguma coisa (s/n): ");
+                    scanf("%c", &desejaContinuar);
+                    getchar();
+                    if(desejaContinuar == 'n'){
+                        break;
+                    }
+                }
+                //fim
+            }
+            //continuar aqui e por favor termina isso!!! -----------------------------------------------------
+            printf("\n-----------------------------------------------------\n");
+            if(contFeijao > 0){
+                cont2Feijao = feijao * contFeijao;
+                printf("%0.0f unidades de feijão = R$%0.2f\n", contFeijao, cont2Feijao);
+            }
+            if(contArroz > 0){
+                cont2Arroz = arroz * contArroz;
+                printf("%0.0f unidades de arroz = R$%0.2f\n", contArroz, cont2Arroz);
+            }
+            if(contCarne > 0){
+                cont2Carne = carne * contCarne;
+                printf("%0.0f kilos de carne = R$%0.2f\n", contCarne, cont2Carne);
+            }
+            if(contTomate > 0){
+                cont2Tomate = tomate * contTomate;
+                printf("%0.0f kilos de tomate = R$%0.2f\n", contTomate, cont2Tomate);
+            }
+            if(contCebola > 0){
+                cont2Cebola = cebola * contCebola;
+                printf("%0.0f kilos de cebola = R$%0.2f\n", contCebola, cont2Cebola);
+            }
+            resutadoFinal = cont2Arroz + cont2Carne + cont2Cebola + cont2Feijao + cont2Tomate;
+            printf("Total a ser pago = R$%0.2f\n", resutadoFinal);
+            contador2 += resutadoFinal;
+            printf("-----------------------------------------------------\n");
+            //continuar---------------------------------------------------------------------------------------
+        }
+        //fim
+
+        //Fim primeira parte----------------------
+
+
+        //--------------------------------------------------------------
+
+        printf("Deseja fexar o caixa? (s/n): ");
+        scanf("%c", &desejaFecharOCaixa);
+        getchar();
+        if(desejaFecharOCaixa == 's'){
+            break;
+        }
+        while(desejaFecharOCaixa != 'n'){
+            printf("Opcão invalida!! Deseja fexar o caixa? (s/n): ");
+            scanf("%c", &desejaFecharOCaixa);
+            getchar();
+            if(desejaFecharOCaixa == 's'){
+                break;
+            }
+        }
+    }
+
+    totalDosTotal = contador + contador2;
+
+    printf("\nO caixa apurou no dia o total de R$%0.2f\n", totalDosTotal);
+
+    return 0;
+}

@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    /*
+        Leia 10 números inteiros e armazene em um vetor. Em seguida imprima os elementos que são primos e suas respectivas posições no vetor.
+    */
+
+    int lista[10];
+
+    for(int i = 0; i < 10; i++){
+        printf("%i - Digite um nuemero: ", i + 1);
+        scanf("%i", &lista[i]);
+    }
+
+    for(int e = 0; e < 10; e++){
+        if(lista[e] % 2 == 1){
+            printf("%i: %i\n", e + 1, lista[e]);
+        }
+    }
+
+
+    return 0;
+}

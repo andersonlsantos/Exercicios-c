@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    float n = 3.14159, raio;
+    float area;
+
+    scanf("%f", &raio);
+
+    area = n * (raio * 2);
+
+    printf("A=%0.4f\n", area);
+
+    return 0;
+}

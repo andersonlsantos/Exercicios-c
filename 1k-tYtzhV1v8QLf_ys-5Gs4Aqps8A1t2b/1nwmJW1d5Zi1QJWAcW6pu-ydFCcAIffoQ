@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int  filhos;
+    float salario, cont3, quantidadeHabitantes, cont1 = 0, media1, media2, porcentagem, cont2 = 0, maior = 0, menor = 1000000000000;
+    long double contTeste = 0, porcentagem2;
+
+    printf("Digite a quantidade de Habitantes: ");
+    scanf("%f", &quantidadeHabitantes);
+
+    for(int i = 1;i <= quantidadeHabitantes;i++){
+        printf("-----------------%i Pessoa a ser pesquisada----------------------\n", i);
+        printf("Quatidade de filhos: ");
+        scanf("%i", &filhos);
+        printf("Salario mensal: R$");
+        scanf("%f", &salario);
+        cont1 = cont1 + filhos;
+        cont3 += salario;
+
+        if(filhos > 2){
+            contTeste += 1;
+        }
+
+        if(salario > maior){
+            maior = salario;
+        }
+
+        if(salario < menor){
+            menor = salario;
+        }
+    }
+
+    printf("-----------------------------------------------------------------");
+
+    media1 = cont1 / quantidadeHabitantes;
+    media2 = cont3 / quantidadeHabitantes;
+    porcentagem2 = (contTeste / 100) * quantidadeHabitantes;
+
+    printf("\nMédia do número de filhos: %0.0f", media1);
+    printf("\nMédia do salário da população: R$%0.2f", media2);
+    printf("\nPercentual de habitantes com mais de 2 filhos: %0.2Lf porcento(s)", porcentagem2);
+    printf("\nmaior salario = R$%0.2f, menor salario = R$%0.2f ", maior, menor);
+
+
+    return 0;
+}

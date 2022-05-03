@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+{
+
+    printf("1 - Saldo em conta corrente.\n");
+    printf("2 - Extrato bancario.\n");
+    printf("3 - Sacar dinheiro.\n");
+    printf("4 - Transferencia.\n");
+
+    int opcao_numero;
+    char opcao_letra = ' ';
+
+    printf("Digite sua opção: ");
+    scanf("%i", &opcao_numero);
+
+    while(opcao_numero > 4 || opcao_numero < 1){
+        printf("Opção invalida! Tente novamente.\n");
+        printf("1 - Saldo em conta corrente.\n");
+        printf("2 - Extrato bancario.\n");
+        printf("3 - Sacar dinheiro.\n");
+        printf("4 - Transferencia.\n");
+        printf("Digite sua opção: ");
+        scanf("%i", &opcao_numero);
+    }
+
+    if(opcao_numero == 1){
+        printf("1 - Saldo em conta corrente.\n");
+    }else if(opcao_numero == 2){
+        printf("2 - Extrato bancario.\n");
+    }else if(opcao_numero == 3){
+        printf("3 - Sacar dinheiro.\n");
+    }else if(opcao_numero == 4){
+        printf("4 - Transferencia.\n");
+    }
+
+    while(opcao_letra != 'n'){
+        getchar();
+        printf("Deseja fazer outra operção (s/n): ");
+        scanf("%c", &opcao_letra);
+
+        if(opcao_letra != 's' && opcao_letra != 'n'){
+            printf("\nOpçao invalida!");
+            printf("\nDigite s/n.\n");
+            continue;
+        }
+
+        if(opcao_letra == 'n'){
+            break;
+        }
+
+        printf("1 - Saldo em conta corrente.\n");
+        printf("2 - Extrato bancario.\n");
+        printf("3 - Sacar dinheiro.\n");
+        printf("4 - Transferencia.\n");
+
+        printf("Digite sua opção: ");
+        scanf("%i", &opcao_numero);
+
+        while(opcao_numero > 4 || opcao_numero < 1){
+            printf("Opção invalida! Tente novamente.\n");
+            printf("1 - Saldo em conta corrente.\n");
+            printf("2 - Extrato bancario.\n");
+            printf("3 - Sacar dinheiro.\n");
+            printf("4 - Transferencia.\n");
+            printf("Digite sua opção: ");
+            scanf("%i", &opcao_numero);
+        }
+
+        if(opcao_numero == 1){
+            printf("1 - Saldo em conta corrente.\n");
+        }else if(opcao_numero == 2){
+            printf("2 - Extrato bancario.\n");
+        }else if(opcao_numero == 3){
+            printf("3 - Sacar dinheiro.\n");
+        }else if(opcao_numero == 4){
+            printf("4 - Transferencia.\n");
+        }
+
+    }
+    printf("Volte sempre!");
+
+    return 0;
+}

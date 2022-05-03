@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int numero = 1, numero2 = 1, vezes = 1;
+
+    printf("Digite um numero positivo: ");
+    scanf("%i", &numero);
+
+    while(numero < 0){
+        printf("\nOpção invalida!! Digite um numero positivo: ");
+        scanf("%i", &numero);
+        getchar();
+    }
+
+    printf("\n");
+
+    //printf("\nNumero = %i", numero);
+
+    do{
+
+        if(numero2 != numero){
+            printf("%i x ", numero2);
+        }
+        if(numero2 == numero){
+            printf("%i = %i\n", numero2, vezes);
+        }
+        numero2++;
+        vezes *= numero2;
+    }while(numero2 <= numero);
+
+    return 0;
+}

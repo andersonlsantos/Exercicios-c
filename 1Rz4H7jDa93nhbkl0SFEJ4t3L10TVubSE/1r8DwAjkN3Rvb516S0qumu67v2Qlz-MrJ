@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int opcao;
+    int cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0, cont5 = 0, maior = 0, igual = 0;
+
+    while(opcao != 6){
+        printf("As opções são:\n1. Candidato Jair Rodrigues\n2. Candidato Carlos Luz\n3. Candidato Neves Rocha\n4. Nulo\n5. Branco\n\n");
+        printf("Entre com o seu voto: ");
+        scanf("%i", &opcao);
+        getchar();
+
+        if(opcao > 6){
+            printf("\nOpção invalida!!\nTente novamente!!\n\n");
+
+        }
+        switch(opcao){
+            case 1:
+                cont1 += 1;
+                break;
+            case 2:
+                cont2 += 1;
+                break;
+            case 3:
+                cont3 += 1;
+                break;
+            case 4:
+                cont4 += 1;
+                break;
+            case 5:
+                cont5 += 1;
+                break;
+        }
+        if(cont1 > maior){
+            maior = cont1;
+            igual = 1;
+        }else if(cont2 > maior){
+            maior = cont2;
+            igual = 2;
+        }else if(cont3 > maior){
+            maior = cont3;
+            igual = 3;
+        }
+
+    }
+
+    printf("\n1.Candidato Jair Rodrigues = %i\n2.Candidato Carlos Luz = %i\n3.Candidato Neves Rocha = %i\n4.Nulo = %i\n5.Branco = %i\n\n", cont1, cont2, cont3, cont4, cont5);
+    printf("\n");
+    if(igual == 1){
+        printf("O Candidato Jair Rodrigues ganhou as eleições com %i votos\n\n", cont1);
+    }else if(igual == 2){
+        printf("O Candidato Carlos Luz ganhou as eleições com %i votos\n\n", cont2);
+    }else{
+        printf("O Candidato Carlos Neves Rocha ganhou as eleições com %i votos\n\n", cont3);
+    }
+
+
+    return 0;
+}

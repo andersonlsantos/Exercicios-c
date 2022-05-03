@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int A[6];
+
+    A[0] = 1;
+    A[1] = 0;
+    A[2] = 5;
+    A[3] = -2;
+    A[4] = -5;
+    A[5] = 7;
+
+    int simples = A[0] + A[1] + A[5];
+
+    printf("%i\n", simples);
+
+    A[4] = 100;
+
+    printf("%i\n", A[3] + A[5]);
+
+    printf("\n%i\n%i\n%i\n%i\n%i\n%i", A[0], A[1], A[2], A[3], A[4], A[5]);
+
+    return 0;
+}

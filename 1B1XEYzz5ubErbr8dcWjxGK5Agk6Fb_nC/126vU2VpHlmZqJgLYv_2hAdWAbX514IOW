@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int n = 0;
+
+    while(n != 3){
+        printf("BOAS VINDAS:\n");
+        printf("1– Imprimir Olá!\n");
+        printf("2– Imprimir Bem vindo!\n");
+        printf("3– Sair do algoritmo\n");
+        printf("digite sua opção: ");
+        scanf("%i", &n);
+        getchar();
+        /*if(n == 3){
+            break;
+        }
+        if(n != 1 && n != 2){
+            printf("\nOpção invalida!\n\n");
+            continue;
+        }*/
+
+        switch(n){
+            case 1:
+                printf("\nOla!\n\n");
+                break;
+            case 2:
+                printf("\nBem vindo!\n\n");
+                break;
+            default:
+                if(n != 3){
+                    printf("\nOpção invalida!\n\n");
+                }
+        }
+    }
+
+    return 0;
+}

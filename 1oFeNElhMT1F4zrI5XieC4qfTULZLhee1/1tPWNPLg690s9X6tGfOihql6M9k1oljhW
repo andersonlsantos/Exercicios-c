@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    char tecla;
+
+
+
+    while(tecla != 'x'){
+        printf("Digite uma tecla qualquer: ");
+        scanf("%c", &tecla);
+        getchar();
+    }
+
+    printf("Fim");
+
+    return 0;
+}

@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    /*
+    int num1 = 1;
+    int num2 = 0;
+    int num3 = 0;
+
+
+    int a = 0;
+    int b = 1;
+    int c;
+
+    printf("Digite um numure: ");
+    scanf("%i", &num2);
+
+    int num4 = (num2 * 3) - (num2 * 2);
+
+    while(num1 <= num2){
+        c = a + b;
+        a = b + c;
+        b = c + a;
+        printf("%i\n", c);
+        printf("%i\n", a);
+        printf("%i\n", b);
+        num1++;
+        num3 += 1;
+
+    }
+
+    /*while(num1 <= num2){
+        if(c = a + b){
+            c = a + b;
+        }
+        if(a = b + c){
+            a = b + c;
+        }
+        if(b = c + a){
+            b = c + a;
+        }
+        printf("%i\n", c);
+        printf("%i\n", a);
+        printf("%i\n", b);
+        num1++;
+        num3 += 1;
+
+    }*/
+
+    //printf("\n%i", num3);
+
+    /*printf("%i\n", 0 + 1); // a + b = c  c = a + b
+    printf("%i\n", 1 + 1); // b + c = a  a = b + c
+    printf("%i\n", 1 + 2); // c + a = b  b = c + a
+    printf("%i\n", 2 + 3); // a + b = c  c = a + b
+    printf("%i\n", 3 + 5); // b + c = a  a = b + c
+    printf("%i\n", 5 + 8); // c + a = b  b = c + a
+    printf("%i\n", 8 + 13); // a + b = c  c = a + b
+    printf("%i\n", 13 + 21); // b + c = a  a = b + c*/
+
+
+
+
+
+    int num1 = 1;
+    int num2 = 0;
+
+    printf("Digite um numure: ");
+    scanf("%i", &num2);
+
+    while(num1 <= num2){
+        int a = 0;
+        int b = 1;
+        int c = 0;
+        for(a = 0; a < b; a++){
+            c = a + b; // a = 0 b = 1 c = 1
+            printf("%i\n", c);
+                for(;b <= c; b++){
+                    a = b + c; // b = 1 c = 1 a = 2
+                    printf("%i\n", a);
+                    for(;c < a ; c++){
+                        b = c + a; // c = 1 a = 2 b = 3
+                        printf("%i\n", b);
+                    }
+                }
+        continue;
+        }
+    }
+
+
+
+    return 0;
+}

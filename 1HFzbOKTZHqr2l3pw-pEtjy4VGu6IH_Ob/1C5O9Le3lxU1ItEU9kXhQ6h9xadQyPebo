@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int lista[5];
+
+    for(int i = 0; i < 6; i++){
+        printf("Digite um valor par para o indice %i do vetor: ", i);
+        scanf("%i", &lista[i]);
+        while(lista[i] % 2 != 0){
+            printf("Foi digitado um valor impar!!!\n");
+            printf("Digite um valor par para o indice %i do vetor: ", i);
+            scanf("%i", &lista[i]);
+            getchar();
+        }
+    }
+
+    for(int a = 6; a >= 0; a--){
+        printf("%i\n", lista[a]);
+    }
+
+
+    return 0;
+}

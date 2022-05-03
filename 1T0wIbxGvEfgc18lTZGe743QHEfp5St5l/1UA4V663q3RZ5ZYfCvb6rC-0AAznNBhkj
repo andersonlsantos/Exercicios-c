@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    srand(time(NULL));
+
+    int jogador = 0;
+    int aleatorio;
+
+
+    while(jogador >= 0){
+        aleatorio  = rand() % 5;
+        printf("Digite um numero entre 0 e 100 e tente acertar o numero da sorte: ");
+        scanf("%i", &jogador);
+        getchar();
+        printf("\nnumero da sorte %i\n\n", aleatorio);
+
+        if(jogador == aleatorio){
+            char continuar;
+            printf("Parabens voce acetou o numero da sorte!!!\n");
+            printf("Deseja continuar jogando (s/n): ");
+            scanf("%c", &continuar);
+            getchar();
+            while(continuar != 's' && continuar != 'n'){
+                printf("\nOpção invalida!!!\n");
+                printf("Deseja continuar jogando (s/n): ");
+                scanf("%c", &continuar);
+                getchar();
+            }
+            if(continuar == 's'){
+                printf("\ncontinuar!!!\n\n");
+            }
+            if(continuar == 'n'){
+                printf("\nJogo encerrado!!!\n");
+                break;
+            }
+        }
+
+    }
+
+    return 0;
+}

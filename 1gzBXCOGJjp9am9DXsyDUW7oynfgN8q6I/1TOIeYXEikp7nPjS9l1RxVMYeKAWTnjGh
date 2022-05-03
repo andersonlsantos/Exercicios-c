@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    /*
+        Faça um programa que cria um vetor de 10 elementos inteiros. Inicialize cada posição do vetor com o valor -1.
+        Posições com o valor -1, significam que estão disponíveis.
+        O programa deve pedir para que o usuário digite dois valores: o valor a ser adicionado no vetor e o índice
+        (entre 0-9) em que o valor digitado será inserido no vetor. Se o índice digitado diz respeito à uma posição
+        disponível do vetor (valor igual a -1), o valor é inserido. Caso contrário, deve-se imprimir uma mensagem informando
+        que aquela posição já foi preenchida.
+        O programa deve ser encerrado quando todas as posições estiverem preenchidas
+    */
+
+    int lista[10];
+    int chave;
+    int valor;
+
+    for(int i = 0; i < 10; i++){
+        lista[i] = -1;
+    }
+
+    /*for(int i = 0; i < 10; i++){
+        printf("%i\n", lista[i]);
+    }*/
+
+    for(int i = 0; i < 10; i++){
+        printf("%i - Digite o valor a ser adicionado e o indice: ", i + 1);
+        scanf("%i %i", &valor, &chave);
+
+        if(lista[chave] == -1){
+            lista[chave] = valor;
+        }else{
+            while(lista[chave] != -1){
+                printf("O indice %i já esta sendo usado, digite outro indice: ", chave);
+                scanf("%i", &chave);
+                getchar();
+            }
+            lista[chave] = valor;
+        }
+    }
+
+    for(int i = 0; i < 10; i++){
+        printf("%i - %i\n", i, lista[i]);
+    }
+
+    return 0;
+}

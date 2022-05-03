@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    srand(time(NULL));
+
+    int numeroDoUsuario, numeroDaSorte;
+
+    do
+    {
+        numeroDaSorte = rand() % 11;
+        printf("Digite um numero de 0 a 10: ");
+        scanf("%i", &numeroDoUsuario);
+        getchar();
+
+        if(numeroDoUsuario > 10){
+            printf("\nOpção invalida!! Digite um numero entre 0 e 10!!!\n\n");
+        }else if(numeroDoUsuario == numeroDaSorte){
+            printf("\nNumero do computador %i e numero do usuario %i, parabens voce acertou!!\n\n", numeroDaSorte, numeroDoUsuario);
+        }else{
+            printf("\nNumero do computador %i e numero do usuario %i, voce não acertou tente novamente!!\n\n", numeroDaSorte, numeroDoUsuario);
+        }
+
+    }while(numeroDaSorte != numeroDoUsuario);
+
+
+    return 0;
+}

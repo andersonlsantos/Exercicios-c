@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int numeroInteiro, cont = 1;
+
+    printf("Digite um numero maior que 0: ");
+    scanf("%i", &numeroInteiro);
+
+    printf("%i = ", numeroInteiro);
+    if(numeroInteiro > 0){
+        for(int i = numeroInteiro; i >= 1; i--){
+            cont *= i;
+            if(i != 1){
+                printf("%i x ", i);
+            }
+            if(i == 1){
+                printf("%i ", i);
+            }
+        }
+    }
+
+    printf("= %i", cont);
+
+    return 0;
+}

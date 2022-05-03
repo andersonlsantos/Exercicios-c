@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    for(int i = 1; i <= 5; i++){
+        printf("X");
+    }
+    printf("\n");
+    for(int f = 1; f <= 1; f++){
+        printf("0");
+        for(int c = 1; c <= 4; c++){
+            printf("X");
+        }
+    }
+    printf("\n");
+    for(int e = 1; e <= 2; e++){
+        printf("0");
+    }
+    for(int g = 1; g <= 3; g++){
+        printf("X");
+    }
+    printf("\n");
+    for(int d = 1; d <= 3; d++){
+        printf("0");
+    }
+    for(int q = 1; q <= 2; q++){
+        printf("X");
+    }
+    printf("\n");
+    for(int l = 1; l <= 4; l++){
+        printf("0");
+    }
+    for(int y = 1; y <= 1; y++){
+        printf("X");
+    }
+
+    return 0;
+}

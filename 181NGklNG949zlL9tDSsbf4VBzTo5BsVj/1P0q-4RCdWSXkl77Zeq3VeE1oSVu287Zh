@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1637677995 source:/home/anderson-user/Documents/Documentos/curso-c/curso-c/Exericicio-041/main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+

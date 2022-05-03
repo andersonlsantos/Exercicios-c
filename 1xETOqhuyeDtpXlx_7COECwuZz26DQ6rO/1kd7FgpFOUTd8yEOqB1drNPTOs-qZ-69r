@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+int main()
+{
+    srand(time(NULL));
+
+
+    int lista[10];
+    int cont = 0;
+
+    for(int i = 0; i < 10; i++){
+        lista[i] = rand() % 51;
+    }
+
+    for(int e = 0; e < 10; e++){
+        printf("%i\n", lista[e]);
+        if(lista[e] % 2 == 1){
+            cont += 1;
+            //printf("%i\n", lista[e]);
+        }
+    }
+
+    int lista2[cont];
+    int cont2 = 0;
+
+    printf("-------------------------\n");
+
+    for(int a = 0; a < 10; a++){
+        if(lista[a] % 2 == 1){
+            cont2 += 1;
+            //printf("%i - %i\n", lista[a], cont2 - 1);
+            lista2[cont2 - 1] = lista[a];
+        }
+    }
+
+    for(int o = 0; o < cont; o++){
+        printf("%i\n", lista2[o]);
+    }
+
+    printf("-%i-", cont);
+
+
+
+    return 0;
+}

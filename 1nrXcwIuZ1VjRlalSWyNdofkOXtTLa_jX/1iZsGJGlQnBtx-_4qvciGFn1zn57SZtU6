@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int numero;
+    int tabuada = 1;
+
+    printf("Digite um numero de 1 a 10 para ver sua tabuada: ");
+    scanf("%i", &numero);
+
+    while(numero == 0 || numero > 10){
+        printf("Opção invalida! Tente novamente!\n");
+        printf("Digite um numero de 1 a 10 para ver sua tabuada: ");
+        scanf("%i", &numero);
+        getchar();
+    }
+
+    //printf("\n%i", numero);
+
+
+    while(tabuada <= 10){
+        printf("%i x %i = %i\n",numero, tabuada, numero * tabuada);
+        tabuada++;
+    }
+
+    return 0;
+}

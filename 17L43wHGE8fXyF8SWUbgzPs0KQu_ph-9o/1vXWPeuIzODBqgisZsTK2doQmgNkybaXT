@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    char opcao, continuar = 's';
+    float valor1, valor2;
+
+      /*printf("Escolha a operação matematica que desseja fazer(+, -, *, /): ");
+      scanf("%c", &opcao);
+
+      while(opcao != '+' && opcao != '-' && opcao != '*' && opcao != '/'){
+          printf("Opção invalida!\n");
+          printf("Escolha a operação matematica que desseja fazer(+, -, *, /): ");
+          getchar();
+          scanf("%c", &opcao);
+      }
+
+      printf("Digite dois numeros para fazer a operação: ");
+      scanf("%f %f", &valor1, &valor2);
+
+      switch(opcao){
+          case '+':
+          printf("%0.1f + %0.1f = %0.1f", valor1, valor2, valor1 + valor2);
+          break;
+          case '-':
+          printf("%0.1f - %0.1f = %0.1f", valor1, valor2, valor1 - valor2);
+          break;
+          case '*':
+          printf("%0.1f x %0.1f = %0.1f", valor1, valor2, valor1 * valor2);
+          break;
+          case '/':
+          printf("%0.1f / %0.1f = %0.1f", valor1, valor2, valor1 / valor2);
+          break;
+      }*/
+
+    while(continuar == 's'){
+
+        //--------------------------------------------------------------------------------
+
+        printf("Escolha a operação matematica que desseja fazer(+, -, *, /): ");
+        scanf("%c", &opcao);
+
+        while(opcao != '+' && opcao != '-' && opcao != '*' && opcao != '/'){
+            printf("1 - Opção invalida!\n");
+            printf("Escolha a operação matematica que desseja fazer(+, -, *, /): ");
+            //getchar();
+            scanf("%c", &opcao);
+        }
+
+        printf("Digite dois numeros para fazer a operação: ");
+        scanf("%f %f", &valor1, &valor2);
+
+        switch(opcao){
+            case '+':
+            printf("%0.1f + %0.1f = %0.1f\n", valor1, valor2, valor1 + valor2);
+            break;
+            case '-':
+            printf("%0.1f - %0.1f = %0.1f\n", valor1, valor2, valor1 - valor2);
+            break;
+            case '*':
+            printf("%0.1f x %0.1f = %0.1f\n", valor1, valor2, valor1 * valor2);
+            break;
+            case '/':
+            printf("%0.1f / %0.1f = %0.1f\n", valor1, valor2, valor1 / valor2);
+            break;
+        }
+
+        //--------------------------------------------------------------------------------
+
+
+        printf("Desseja fazer outra opração(s/n): ");
+        //getchar();
+        scanf("%c", &continuar);
+        getchar();
+
+        if(continuar == 'n'){
+            break;
+        }
+        while(continuar != 's' && continuar != 'n'){
+            printf("2 - Opcão invalida!\n");
+            getchar();
+            printf("Desseja fazer outra opração(s/n): ");
+            scanf("%c", &continuar);
+            continuar;
+            //getchar();
+        }
+
+    }
+
+
+
+    return 0;
+}

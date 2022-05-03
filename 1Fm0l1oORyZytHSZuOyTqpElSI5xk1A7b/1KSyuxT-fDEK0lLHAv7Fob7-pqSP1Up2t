@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+int main()
+{
+
+    srand(time(NULL));
+
+    int lista[10];
+
+    for(int i = 0; i <= 9; i++){
+        printf("%i - Digite um numero: ", i + 1);
+        scanf("%i", &lista[i]);
+    }
+
+    printf("\n");
+
+    for(int e = 0; e <= 9; e++){
+        if(lista[e] < 0){
+            lista[e] = 0;
+        }
+    }
+
+    for(int r = 0; r <= 9; r++){
+        printf("%i\n", lista[r]);
+    }
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int senha = 1594;
+    int tentativas = 1;
+    int usuario;
+
+    while(tentativas <= 3){
+        printf("Digite a senha: ");
+        scanf("%i", &usuario);
+        getchar();
+
+        if(usuario == senha){
+            printf("Senha Correta");
+            break;
+        }
+        if(usuario != senha){
+            printf("Senha Incorreta\n");
+        }
+        if(tentativas == 3){
+            printf("Acesso bloqueado\n");
+        }
+
+        tentativas++;
+    }
+
+
+    return 0;
+}

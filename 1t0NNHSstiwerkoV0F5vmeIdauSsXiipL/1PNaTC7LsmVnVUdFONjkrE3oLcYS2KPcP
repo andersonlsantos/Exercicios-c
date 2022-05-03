@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    float lista[7];
+
+    for(int i = 0; i < 8; i++){
+        printf("Digite um valor para o indice %i do vetor: ", i);
+        scanf("%f", &lista[i]);
+    }
+
+    /*for(int a = 0; a <= 8; a++){
+        printf("%f\n", lista[a]);
+    }*/
+
+    int A, B;
+
+    printf("\nDigite 2 indices do vetor:\n");
+    printf("Primeiro indice: ");
+    scanf("%i", &A);
+    while(A > 7){
+        printf("Opção invalida!!! Primeiro indice: ");
+        scanf("%i", &A);
+        getchar();
+    }
+    printf("Segundo indice: ");
+    scanf("%i", &B);
+    while(B > 7){
+        printf("Opção invalida!!! Segundo indice: ");
+        scanf("%i", &B);
+        getchar();
+    }
+
+    float soma = lista[A] + lista[B];
+
+    printf("\n%0.1f + %0.1f = %0.1f", lista[A], lista[B], soma);
+
+    return 0;
+}

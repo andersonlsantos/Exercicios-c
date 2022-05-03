@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int idade, opiniao, cont1 = 0, idade1 = 0, media1, cont2 = 0;
+    long double  cont3 = 0, porcentagem, cont4 = 0;
+
+    for(int i = 1;i <= 10;i++){
+        printf("----------%i-----------\n", i);
+        printf("Digite sua idade: ");
+        scanf("%i", &idade);
+
+        printf("1 - Exelente.\n");
+        printf("2 - Bom.\n");
+        printf("3 - Regular.\n");
+        printf("Escolha sua opinião: ");
+        scanf("%i", &opiniao);
+        cont4 += 1;
+
+        if(opiniao > 3){
+            break;
+        }else if(opiniao < 1){
+            break;
+        }
+
+        if(opiniao == 1){
+            cont1 += 1;
+            idade1 += idade;
+        }
+
+        if(opiniao == 3){
+            cont2 += 1;
+        }
+
+        if(opiniao == 2){
+            cont3 += 1;
+        }
+    }
+
+    if(opiniao > 3){
+        printf("Opção invalida tente novamente!");
+    }else if(opiniao < 1){
+        printf("Opção invalida tente novamente!");
+    }
+
+    media1 = idade1 / cont1;
+    porcentagem = (cont3 / 100) * cont4;
+
+    printf("A média das idades das pessoas que responderam excelente; %i\n", media1);
+    printf("A quantidade de pessoas que responderam regular; %i\n", cont2);
+    printf("a percentagem de pessoas que responderam bom entre todos os expectadores analisados. %0.2Lf porcento(s)", porcentagem);
+
+    return 0;
+}

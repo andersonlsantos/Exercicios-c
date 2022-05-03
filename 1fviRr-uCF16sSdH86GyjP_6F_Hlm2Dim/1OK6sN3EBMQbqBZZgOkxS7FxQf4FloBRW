@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    int abitantes, i = 1, codigo, marcador, marcador2;
+    float consumo = 0, maior = 0, menor = 10000000000, cont = 0, cont2 = 0, cont3 = 0, cont4 = 0;
+
+    printf("Digite o numero de abitantes: ");
+    scanf("%i", &abitantes);
+
+    do{
+        printf("\nAbitante n-%i consumo do mes: ", i);
+        scanf("%f", &consumo);
+        printf("Digite o codigo: ");
+        scanf("%i", &codigo);
+        getchar();
+        if(codigo > 3){
+            while(codigo > 3){
+                printf("Opção de codigo invalida!!! Digite um numero valido de 1 a 3: ");
+                scanf("%i", &codigo);
+                getchar();
+            }
+        }
+        if(consumo > maior){
+            maior = consumo;
+            marcador = i;
+        }
+        if(consumo < menor){
+            menor = consumo;
+            marcador2 = i;
+        }
+        cont += consumo;
+        switch(codigo){
+            case 1:
+                cont2 += consumo;
+                break;
+            case 2:
+                cont3 += consumo;
+                break;
+            case 3:
+                cont4 += consumo;
+                break;
+        }
+        i++;
+    }while(i <= abitantes);
+
+    printf("\n-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=--===-=\n");
+    printf("Abitante n-%i Maior consumo R$%0.2f\n", marcador, maior);
+    printf("Abitante n-%i Menor consumo R$%0.2f\n", marcador2, menor);
+    printf("A media do consumo de todos abitantes R$%0.2f\n", cont / abitantes);
+    printf("Total codigo 1 categoria Residencial = R$%0.2f\n", cont2);
+    printf("Total codigo 2 categoria Comercial = R$%0.2f\n", cont3);
+    printf("Total codigo 3 categoria Industrial = R$%0.2f\n", cont4);
+
+    return 0;
+}

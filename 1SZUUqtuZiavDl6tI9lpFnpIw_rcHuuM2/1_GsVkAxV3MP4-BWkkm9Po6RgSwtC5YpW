@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    /*
+        Escreva um programa que leia 10 números inteiros e os armazene em um vetor. Imprima o vetor,
+        o maior elemento e a posição que ele se encontra.
+    */
+
+    int lista[10];
+
+    for(int i = 0; i < 10; i++){
+        printf("%i - Digite um nuemero: ", i + 1);
+        scanf("%i", &lista[i]);
+    }
+
+    int maior = 0;
+    int chave;
+
+    for(int e = 0; e < 10; e++){
+        if(lista[e] > maior){
+            maior = lista[e];
+            chave = e;
+        }
+    }
+
+    printf("%i: %i", chave + 1, maior);
+
+    return 0;
+}

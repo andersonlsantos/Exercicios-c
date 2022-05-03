@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+int main()
+{
+
+    /*
+        Faça um programa que pede que o usuário digite um número inteiro positivo maior que zero e armazene
+        na variável TAM. Enquanto o usuário digitar um número inválido, peça para que ele redigite. Um vez
+        definido o valor de TAM, crie um vetor com TAM elementos. Inicialize o vetor com valores aleatórios
+        entre 0-100. Uma vez preenchido, armazene em um segundo vetor cada valor do primeiro vetor só que
+        elevado ao quadrado. Imprima o segundo vetor.
+    */
+
+    srand(time(NULL));
+
+    int TAM;
+
+    printf("Digite um numero maior que zero: ");
+    scanf("%i", &TAM);
+
+    while(TAM <= 0){
+        printf("Opção invalida!!! Digite um numero maior que zero: ");
+        scanf("%i", &TAM);
+        getchar();
+    }
+
+    float lista[TAM];
+
+    for(int i = 0; i < TAM; i++){
+        lista[i] = rand() % 101;
+    }
+
+    float lista2[TAM];
+
+    for(int e = 0; e < TAM; e++){
+        lista2[e] = lista[e] * lista[e];
+    }
+
+    for(int a = 0; a < TAM; a++){
+        printf("%0.1f\n", lista2[a]);
+    }
+
+    return 0;
+}

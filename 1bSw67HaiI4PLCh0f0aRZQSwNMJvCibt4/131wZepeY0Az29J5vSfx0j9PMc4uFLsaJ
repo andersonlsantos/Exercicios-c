@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    /*
+        Faça um programa que leia dois vetores de 10 posições e calcule outro vetor contendo, nas posições pares os
+        valores do primeiro e nas posições ímpares os valores do segundo.
+    */
+
+    int lista1[10];
+    int lista2[10];
+
+    for(int i = 0; i < 10; i++){
+        printf("%i - Digite um numero: ", i + 1);
+        scanf("%i", &lista1[i]);
+    }
+
+    printf("----------------------------\n");
+
+    for(int e = 0; e < 10; e++){
+        printf("%i - Digite um numero: ", e + 1);
+        scanf("%i", &lista2[e]);
+    }
+
+    int lista3[10];
+
+    for(int a = 0; a < 10; a++){
+        if(a % 2 == 1){
+            lista3[a] = lista1[a];
+        }else{
+            lista3[a] = lista2[a];
+        }
+    }
+
+    for(int r = 0; r < 10; r++){
+        printf("%i - %i\n", r + 1, lista3[r]);
+    }
+
+    return 0;
+}
